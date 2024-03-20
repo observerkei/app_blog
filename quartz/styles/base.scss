@@ -53,8 +53,12 @@ ul,
   }
 }
 
+strong {
+  font-weight: $semiBoldWeight;
+}
+
 a {
-  font-weight: $boldWeight;
+  font-weight: $semiBoldWeight;
   text-decoration: none;
   transition: color 0.2s ease;
   color: var(--secondary);
@@ -74,6 +78,11 @@ a {
       background-color: none;
       border-radius: 0;
       padding: 0;
+    }
+    &.tag-link {
+      &::before {
+        content: "#";
+      }
     }
   }
 
@@ -259,11 +268,9 @@ thead {
   font-weight: revert;
   margin-bottom: 0;
 
-  article > & > a {
+  article > & > a[role="anchor"] {
     color: var(--dark);
-    &.internal {
-      background-color: transparent;
-    }
+    background-color: transparent;
   }
 }
 
