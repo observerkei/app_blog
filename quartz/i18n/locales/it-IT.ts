@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Creato con",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "Vista grafico",
     },

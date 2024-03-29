@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Được tạo bởi",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "Biểu Đồ",
     },

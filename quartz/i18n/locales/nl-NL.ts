@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Gemaakt met",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "Grafiekweergave",
     },

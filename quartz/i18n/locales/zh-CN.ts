@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Created with",
     },
+    waline: {
+      pageviewCount: "当前页面浏览量:",
+    },
     graph: {
       title: "关系图谱",
     },

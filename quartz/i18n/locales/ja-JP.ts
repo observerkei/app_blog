@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "作成",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "グラフビュー",
     },

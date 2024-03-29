@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Created with",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "그래프 뷰",
     },

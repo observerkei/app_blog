@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "Створено за допомогою",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "Вигляд графа",
     },

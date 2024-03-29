@@ -37,6 +37,9 @@ export interface Translation {
     footer: {
       createdWith: string
     }
+    waline: {
+      pageviewCount: string
+    }
     graph: {
       title: string
     }

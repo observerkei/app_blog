@@ -2,8 +2,9 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
-import WalineLocal from "../../content/.obsidian/plugins/waline/waline-local"
-import script from "../../content/.obsidian/plugins/waline/waline-cnd.inline"
+import WalineComment from "../../content/.obsidian/plugins/waline/waline-comment"
+import WalineScript from "./scripts/waline.inline"
+import WalinePageview from "../../content/.obsidian/plugins/waline/waline-pageview"
 
 interface Options {
   links: Record<string, string>
@@ -17,7 +18,11 @@ export default ((opts?: Options) => {
       <>
       <footer class={`${displayClass ?? ""}`}>
         <hr />
-        <WalineLocal />
+      <WalineComment />
+        <spane id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
+          {i18n(cfg.locale).components.waline.pageviewCount}{" "}
+          <WalinePageview />
+        </spane>
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
@@ -35,6 +40,6 @@ export default ((opts?: Options) => {
   }
 
   Footer.css = style
-  Footer.afterDOMLoaded = script
+  Footer.afterDOMLoaded = WalineScript
   return Footer
 }) satisfies QuartzComponentConstructor

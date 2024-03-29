@@ -35,6 +35,9 @@ export default {
     footer: {
       createdWith: "أُنشئ باستخدام",
     },
+    waline: {
+      pageviewCount: "Current page views:",
+    },
     graph: {
       title: "التمثيل التفاعلي",
     },
