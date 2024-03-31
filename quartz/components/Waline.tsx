@@ -18,11 +18,11 @@ export default ((opts?: Options) => {
       <>
       <footer class={`${displayClass ?? ""}`}>
         <hr />
-      <WalineComment />
-        <spane id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
+        <WalineComment />
+        <span id="waline-pageview-wait" style="display: none;" class="breakable">
           {i18n(cfg.locale).components.waline.pageviewCount}{" "}
           <WalinePageview />
-        </spane>
+        </span>
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}

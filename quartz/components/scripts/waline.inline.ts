@@ -17,7 +17,6 @@ function wait_load() {
     } catch (err) {
     
     }
-  
     try {
       Pageview();
     } catch (err) {
