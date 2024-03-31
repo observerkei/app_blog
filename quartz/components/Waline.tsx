@@ -23,10 +23,10 @@ export default ((opts?: Options) => {
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
         </p>
-        <span id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
+        <p id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
           {i18n(cfg.locale).components.waline.pageviewCount}{" "}
           <WalinePageview />
-        </span>
+        </p>
         <div style="text-align: center;">
           <a href="#" >⇫</a>
         </div>
