@@ -13,12 +13,12 @@ function wait_load() {
 
   if (!is_404) {
     try {
-      Comment();
+      Pageview();
     } catch (err) {
     
     }
     try {
-      Pageview();
+      Comment();
     } catch (err) {
     
     }
