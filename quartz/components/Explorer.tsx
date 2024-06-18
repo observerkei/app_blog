@@ -13,6 +13,7 @@ const defaultOptions = {
   folderClickBehavior: "collapse",
   folderDefaultState: "collapsed",
   useSavedState: true,
+  showTitlePointer: true,
   mapFn: (node) => {
     return node
   },
@@ -93,20 +94,25 @@ export default ((userOpts?: Partial<Options>) => {
           data-tree={jsonTree}
         >
           <h1>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h1>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="5 8 14 8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="fold"
-          >
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+
+          { opts.showTitlePointer && <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="5 8 14 8"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="fold"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline> 
+              </svg>
+            </>
+          }
+            
         </button>
         <div id="explorer-content">
           <ul class="overflow" id="explorer-ul">

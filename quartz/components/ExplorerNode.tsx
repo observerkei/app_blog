@@ -15,6 +15,7 @@ export interface Options {
   title?: string
   folderDefaultState: "collapsed" | "open"
   folderClickBehavior: "collapse" | "link"
+  showTitlePointer: boolean
   useSavedState: boolean
   sortFn: (a: FileNode, b: FileNode) => number
   filterFn: (node: FileNode) => boolean
