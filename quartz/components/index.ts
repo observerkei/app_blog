@@ -15,6 +15,7 @@ import Graph from "./Graph"
 import Backlinks from "./Backlinks"
 import Search from "./Search"
 import Footer from "./Footer"
+import Boundary from "./Boundary"
 import Waline from "./Waline"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
@@ -38,6 +39,7 @@ export {
   Backlinks,
   Search,
   Footer,
+  Boundary,
   Waline,
   DesktopOnly,
   MobileOnly,

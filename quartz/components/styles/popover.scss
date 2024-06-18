@@ -17,13 +17,13 @@
 .popover {
   z-index: 999;
   position: absolute;
-  overflow: visible;
+  overflow: auto;
   padding: 1rem;
 
   & > .popover-inner {
     position: relative;
-    width: 30rem;
-    max-height: 20rem;
+    width: 20rem;
+    max-height: 35rem;
     padding: 0 1rem 1rem 1rem;
     font-weight: initial;
     font-style: initial;
