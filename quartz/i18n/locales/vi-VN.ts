@@ -68,6 +68,7 @@ export default {
     error: {
       title: "Không Tìm Thấy",
       notFound: "Trang này được bảo mật hoặc không tồn tại.",
+      home: "Trở về trang chủ",
     },
     folderContent: {
       folder: "Thư Mục",

@@ -70,6 +70,7 @@ export default {
     error: {
       title: "Страница не найдена",
       notFound: "Эта страница приватная или не существует",
+      home: "Вернуться на главную страницу",
     },
     folderContent: {
       folder: "Папка",
