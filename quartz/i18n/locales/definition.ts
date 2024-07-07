@@ -45,7 +45,7 @@ export interface Translation {
     }
     recentNotes: {
       title: string
-      seeRemainingMore: (variables: { remaining: number }) => string
+      seeRemainingMore: (variables: { remaining: string }) => string
     }
     transcludes: {
       transcludeOf: (variables: { targetSlug: FullSlug }) => string
