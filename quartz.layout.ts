@@ -24,14 +24,27 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer()),
-    Component.DesktopOnly(Component.RecentNotes()),
+    Component.DesktopOnly(Component.RecentNotes({ linkToMore: "tags/Note" })),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.RecentNotes()),
+    Component.MobileOnly(Component.RecentNotes({ linkToMore: "tags/Note" })),
     Component.MobileOnly(Component.Backlinks()),
     Component.DesktopOnly(Component.Backlinks()),
-    Component.Graph(),
+    Component.Graph({
+      localGraph: {
+        removeTags: [
+          "Note",
+          "excalidraw"
+        ]
+      },
+      globalGraph: {
+        removeTags: [
+          "Note",
+          "excalidraw"
+        ]
+      }
+    }),
   ],
 }
 
