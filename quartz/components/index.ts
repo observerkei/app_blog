@@ -1,3 +1,5 @@
+import Waline from './Waline'
+import Empty from './Empty'
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
@@ -22,6 +24,8 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 
 export {
+  Waline,
+  Empty,
   ArticleTitle,
   Content,
   TagContent,
