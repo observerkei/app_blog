@@ -47,7 +47,7 @@ export default ((userOpts?: Partial<Options>) => {
               margin: 0,
               display: 'flex',
               flexDirection: 'column',
-              fontSize: '0.5rem',
+              fontSize: '0.7rem',
             }}>
 
             <h3 style={{
@@ -68,7 +68,7 @@ export default ((userOpts?: Partial<Options>) => {
                 <a
                   href={resolveRelative(fileData.slug!, opts.linkToMore)}
                   style={{
-                    fontSize: '0.2rem',
+                    fontSize: '0.7rem',
                   }}
                 >
                   {i18n(cfg.locale).components.recentNotes.seeRemainingMore({ remaining })}
@@ -86,7 +86,6 @@ export default ((userOpts?: Partial<Options>) => {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '0.5rem',
                   }}>
 
                   <a
@@ -94,6 +93,7 @@ export default ((userOpts?: Partial<Options>) => {
                     class="internal"
                     style={{
                       backgroundColor: '#0000',
+                      flexGrow: 1,
                     }}
                   >
                     {title}
