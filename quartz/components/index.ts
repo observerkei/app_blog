@@ -1,5 +1,5 @@
-import Waline from './Waline'
-import Empty from './Empty'
+import Waline from './private/Waline'
+import Empty from './private/Empty'
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
