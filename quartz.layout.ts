@@ -1,6 +1,13 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import Custom from './custom/quartz/components'
+import { getAllSegmentPrefixes } from "./quartz/util/path"
+import { QuartzPluginData } from "./quartz/plugins/vfile";
+
+const filterFileTags = (Tag: string) => {
+  return (file: QuartzPluginData) => 
+   (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(Tag)
+};
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -28,13 +35,20 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.MobileOnly(Component.Darkmode()),
-    Component.DesktopOnly(Custom.RecentNotes({ linkToMore: "tags/Note", limit: 1 })),
+    Component.DesktopOnly(Custom.RecentTagNotes({ 
+      linkToMore: "tags/Note", 
+      limit: 1,
+      filter: filterFileTags("Note"),
+    })),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.RecentNotes({ linkToMore: "tags/Note", limit: 2 })),
-    Component.Backlinks(),
+    Component.MobileOnly(Component.RecentNotes({ 
+      linkToMore: 
+      "tags/Note", limit: 1,
+      filter: filterFileTags("Note"),
+    })),
     Component.Graph({
       localGraph: {
         removeTags: [
@@ -49,6 +63,7 @@ export const defaultContentPageLayout: PageLayout = {
         ]
       }
     }),
+    Component.Backlinks(),
   ],
 }
 

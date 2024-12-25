@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import { FullSlug, SimpleSlug, resolveRelative } from "../../../quartz/util/path"
 import { QuartzPluginData } from "../../../quartz/plugins/vfile"
 import { byDateAndAlphabetical } from "../../../quartz/components/PageList"
-import style from "./styles/recentNotes.scss"
+import style from "./styles/recentTagNotes.scss"
 import { Date, getDate } from "../../../quartz/components/Date"
 import { GlobalConfiguration } from "../../../quartz/cfg"
 import { i18n } from "../../../quartz/i18n"
@@ -41,7 +41,7 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <>
-      <div class={classNames(displayClass, "recent-notes")}>
+      <div class={classNames(displayClass, "recent-tag-notes")}>
         <div 
           style={{
             margin: 0,

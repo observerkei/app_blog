@@ -1,12 +1,12 @@
 import Waline from './/Waline';
 import Empty from './Empty';
-import RecentNotes from './RecentNotes';
+import RecentTagNotes from './RecentTagNotes';
 import PageTitleDarkmode from './PageTitleDarkmode';
 
 
 export default {
   Waline,
   Empty,
-  RecentNotes,
+  RecentTagNotes,
   PageTitleDarkmode,
 }
