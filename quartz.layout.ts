@@ -24,11 +24,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({ useSavedState: true })),
-    Component.DesktopOnly(Component.RecentNotes({ linkToMore: "tags/Note" })),
+    Component.DesktopOnly(Component.RecentNotes({ linkToMore: "tags/Note", limit: 2 })),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.RecentNotes({ linkToMore: "tags/Note" })),
+    Component.MobileOnly(Component.RecentNotes({ linkToMore: "tags/Note", limit: 2 })),
     Component.MobileOnly(Component.Backlinks()),
     Component.DesktopOnly(Component.Backlinks()),
     Component.Graph({
