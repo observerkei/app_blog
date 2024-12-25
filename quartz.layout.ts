@@ -6,9 +6,9 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-      Component.Waline()
+      Component.Custom.Waline()
   ],
-  footer: Component.Empty(),
+  footer: Component.Custom.Empty(),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -24,8 +24,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
+    Component.DesktopOnly(Component.Custom.RecentNotesPrivate({ linkToMore: "tags/Note", limit: 1 })),
     Component.DesktopOnly(Component.Explorer()),
-    Component.DesktopOnly(Component.RecentNotes({ linkToMore: "tags/Notei", limit: 0 })),
   ],
   right: [
     Component.Graph(),

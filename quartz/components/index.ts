@@ -1,5 +1,3 @@
-import Waline from './private/Waline'
-import Empty from './private/Empty'
 import Content from "./pages/Content"
 import TagContent from "./pages/TagContent"
 import FolderContent from "./pages/FolderContent"
@@ -22,10 +20,9 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
+import Custom from "../../custom/quartz/components";
 
 export {
-  Waline,
-  Empty,
   ArticleTitle,
   Content,
   TagContent,
@@ -48,4 +45,5 @@ export {
   NotFound,
   Breadcrumbs,
   Comments,
+  Custom,
 }
