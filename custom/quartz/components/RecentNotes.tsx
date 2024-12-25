@@ -48,16 +48,16 @@ export default ((userOpts?: Partial<Options>) => {
             display: 'flex',
             flexDirection: 'column',
             fontSize: '0.5rem',
-          
         }}>
 
           <h3 style={{
+            marginTop: '1rem',
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            paddingRight: '0.5rem',
           }}>
             <div style={{
-              paddingLeft: '0.1rem',
               fontSize: '1rem',
               fontWeight: 'bold',
             }}>
