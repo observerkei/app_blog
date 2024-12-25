@@ -41,75 +41,75 @@ export default ((userOpts?: Partial<Options>) => {
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
       <>
-      <div class={classNames(displayClass, "recent-tag-notes")}>
-        <div 
-          style={{
-            margin: 0,
-            display: 'flex',
-            flexDirection: 'column',
-            fontSize: '0.5rem',
-        }}>
-
-          <h3 style={{
-            marginTop: '1rem',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            paddingRight: '0.5rem',
-          }}>
-            <div style={{
-              fontSize: '1rem',
-              fontWeight: 'bold',
+        <div class={classNames(displayClass, "recent-tag-notes")}>
+          <div
+            style={{
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              fontSize: '0.5rem',
             }}>
-              Recent Notes:
-            </div>
 
-          {opts.linkToMore && remaining > 0 && (
-            <a 
-              href={resolveRelative(fileData.slug!, opts.linkToMore)}
-              style={{
-                fontSize: '0.2rem',
-              }}
-            >
-              {i18n(cfg.locale).components.recentNotes.seeRemainingMore({ remaining })}
-            </a>
-          )}
-          </h3>
+            <h3 style={{
+              marginTop: '1rem',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              paddingRight: '0.5rem',
+            }}>
+              <div style={{
+                fontSize: '1rem',
+                fontWeight: 'bold',
+              }}>
+                Recent Notes:
+              </div>
 
-
-          {pages.slice(0, opts.limit).map((page) => {
-            const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
-            const tags = page.frontmatter?.tags ?? []
-
-            return (
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                }}>
-
+              {opts.linkToMore && remaining > 0 && (
                 <a
-                  href={resolveRelative(fileData.slug!, page.slug!)}
-                  class="internal"
+                  href={resolveRelative(fileData.slug!, opts.linkToMore)}
                   style={{
-                    backgroundColor: '#0000',
+                    fontSize: '0.2rem',
                   }}
                 >
-                  {title}
+                  {i18n(cfg.locale).components.recentNotes.seeRemainingMore({ remaining })}
                 </a>
-                {page.dates && (
-                  <Date
-                    date={getDate(cfg, page)!}
-                    locale={cfg.locale}
-                  />
-                )}
-              </div>
-            )
-          })}
+              )}
+            </h3>
 
+
+            {pages.slice(0, opts.limit).map((page) => {
+              const title = page.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title
+              const tags = page.frontmatter?.tags ?? []
+
+              return (
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                  }}>
+
+                  <a
+                    href={resolveRelative(fileData.slug!, page.slug!)}
+                    class="internal"
+                    style={{
+                      backgroundColor: '#0000',
+                    }}
+                  >
+                    {title}
+                  </a>
+                  {page.dates && (
+                    <Date
+                      date={getDate(cfg, page)!}
+                      locale={cfg.locale}
+                    />
+                  )}
+                </div>
+              )
+            })}
+
+          </div>
         </div>
-      </div>
       </>
     )
   }
