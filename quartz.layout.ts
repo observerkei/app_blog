@@ -49,6 +49,7 @@ export const defaultContentPageLayout: PageLayout = {
       "tags/Note", limit: 1,
       filter: filterFileTags("Note"),
     })),
+    Component.Backlinks(),
     Component.Graph({
       localGraph: {
         removeTags: [
@@ -63,7 +64,6 @@ export const defaultContentPageLayout: PageLayout = {
         ]
       }
     }),
-    Component.Backlinks(),
   ],
 }
 

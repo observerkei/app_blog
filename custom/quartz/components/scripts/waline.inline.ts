@@ -14,12 +14,12 @@ function wait_load() {
     try {
       Pageview();
     } catch (err) {
-    
+
     }
     try {
       Comment();
     } catch (err) {
-    
+
     }
   }
 }

@@ -16,27 +16,27 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <>
-      <footer class={`${displayClass ?? ""}`}>
-        <WalineComment />
-        <p>
-          {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
-        </p>
-        <p id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
-          {"Current page views:"}{" "}
-          <WalinePageview />
-        </p>
-        <div style="text-align: center;">
-          <a href="#" >⇫</a>
-        </div>
-        <ul>
-          {Object.entries(links).map(([text, link]) => (
-            <li>
-              <a href={link}>{text}</a>
-            </li>
-          ))}
-        </ul>
-      </footer>
+        <footer class={`${displayClass ?? ""}`}>
+          <WalineComment />
+          <p>
+            {i18n(cfg.locale).components.footer.createdWith}{" "}
+            <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
+          </p>
+          <p id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
+            {"Current page views:"}{" "}
+            <WalinePageview />
+          </p>
+          <div style="text-align: center;">
+            <a href="#" >⇫</a>
+          </div>
+          <ul>
+            {Object.entries(links).map(([text, link]) => (
+              <li>
+                <a href={link}>{text}</a>
+              </li>
+            ))}
+          </ul>
+        </footer>
       </>
     )
   }
