@@ -1,7 +1,7 @@
 // put your custom CSS here!
 
 @use "../../../quartz/styles/variables.scss" as *;
-
+@use "../components/styles/PageTitleDarkmode.scss";
 
 .page {
    max-width: 100%;
@@ -37,3 +37,11 @@
   overflow: auto;
   width: 100%;
 }
+
+.page-title {
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+
+

@@ -14,7 +14,7 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-      Custom.Waline()
+    Custom.Waline()
   ],
   footer: Custom.Empty(),
 }

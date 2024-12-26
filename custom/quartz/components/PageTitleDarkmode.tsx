@@ -1,7 +1,7 @@
 // @ts-ignore: this is safe, we don't want to actually make darkmode.inline.ts a module as
 // modules are automatically deferred and we don't want that to happen for critical beforeDOMLoads
 // see: https://v8.dev/features/modules#defer
-import darkmodeScript from "../../../quartz/components/./scripts/darkmode.inline"
+import darkmodeScript from "./scripts/pagetitle-darkmode.inline"
 import styles from "../../../quartz/components/./styles/darkmode.scss"
 import {
   QuartzComponent,
@@ -33,7 +33,7 @@ const PageTitleDarkmode: QuartzComponent = ({ fileData, displayClass, cfg }: Qua
         >
           <a href={baseDir}>{title}</a>
         </h2>
-        <button class={classNames(displayClass, "darkmode")} id="darkmode">
+        <button class={classNames(displayClass, "pagetitle-darkmode")} id="pagetitle-darkmode">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
