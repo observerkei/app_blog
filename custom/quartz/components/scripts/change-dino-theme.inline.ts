@@ -1,3 +1,5 @@
+import { console_dbg } from '../common/util';
+
 const dinoChangeTheme = (e: CustomEventMap["themechange"]) => {
     const theme = e.detail.theme
     const iframe = document.getElementById("dino-item-iframe") as HTMLIFrameElement;
@@ -12,10 +14,10 @@ const dinoChangeTheme = (e: CustomEventMap["themechange"]) => {
     iframe.style.visibility = "hidden";
     if (theme === "light") {
         iframe.src = 'static/dino';
-        //console.log('update dino light theme.')
+        console_dbg('update dino light theme.')
     } else {
         iframe.src = 'static/dino/index-dark.html';
-        //console.log('update dino dark theme.')
+        console_dbg('update dino dark theme.')
     }
     setTimeout(() => {
         iframe.style.visibility = 'visible';
@@ -30,7 +32,7 @@ document.addEventListener("nav", () => {
 document.addEventListener('DOMContentLoaded', () => {
     const saveTheme = document.documentElement.getAttribute("saved-theme");
     
-    //console.log('get init theme: ', saveTheme);
+    console_dbg('get init theme: ', saveTheme);
     dinoChangeTheme({
         detail: {
             theme: saveTheme || 'dark',
