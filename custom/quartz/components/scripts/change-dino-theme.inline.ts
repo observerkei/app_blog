@@ -1,54 +1,40 @@
-
-const currentTheme = localStorage.getItem("theme") ?? userPref
-document.documentElement.setAttribute("saved-theme", currentTheme)
-
-
-const updateDinoTheme = (theme = 'dark') => {
-    const iframe = document.getElementById("dino-item-iframe");
-    if (iframe) {
-        const iframeDocument = iframe?.contentDocument || iframe?.contentWindow.document;
-
-        const dinoItem = iframeDocument?.getElementById("dino-item");
-        if (dinoItem) {
-            if (theme === "light") {
-                const light = '#faf8f8';
-
-                dinoItem.style.background = light;
-                console.log('update dino light theme.')
-            } else {
-                const dark = '#161618';
-                dinoItem.style.background = dark;
-                console.log('update dino dark theme.')
-            }
-        } else {
-            console.log('dino not found. try later. ')
-            setTimeout(() => {
-                updateDinoTheme(theme);
-            }, 200);
-        }
-    } else {
-        console.log('dino iframe not found. try later.')
-        setTimeout(() => {
-            updateDinoTheme(theme);
-        }, 200);
+const dinoChangeTheme = (e: CustomEventMap["themechange"]) => {
+    const theme = e.detail.theme
+    const iframe = document.getElementById("dino-item-iframe") as HTMLIFrameElement;
+    if (!iframe) {
+        console.log('nomath dino iframe.');
+        return;
     }
+    if (!iframe.src) {
+        console.log('dino iframe no src.');
+        return;
+    }
+    iframe.style.visibility = "hidden";
+    if (theme === "light") {
+        iframe.src = 'static/dino';
+        //console.log('update dino light theme.')
+    } else {
+        iframe.src = 'static/dino/index-dark.html';
+        //console.log('update dino dark theme.')
+    }
+    setTimeout(() => {
+        iframe.style.visibility = 'visible';
+    }, 200);
 }
 
-
-document.addEventListener("themechange", (e) => {
-    console.log("dino check Theme changed to " + e.detail.theme) // either "light" or "dark"
-    // your logic here
-    updateDinoTheme(e.detail.theme);
-})
-
-
-
 document.addEventListener("nav", () => {
-    const htmlElement = document.documentElement;
-    const savedTheme = htmlElement.getAttribute("saved-theme");
-
-
-    updateDinoTheme(savedTheme);
+    document.addEventListener("themechange", dinoChangeTheme)
 })
 
-updateDinoTheme(currentTheme);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const saveTheme = document.documentElement.getAttribute("saved-theme");
+    
+    //console.log('get init theme: ', saveTheme);
+    dinoChangeTheme({
+        detail: {
+            theme: saveTheme || 'dark',
+        }
+    });
+});
+

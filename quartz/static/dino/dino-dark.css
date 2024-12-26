@@ -10,7 +10,7 @@ body {
   --google-gray-500: rgb(154, 160, 166);
   --google-gray-600: rgb(128, 134, 139);
   --google-gray-700: rgb(95, 99, 105);
-  background-color: #faf8f8;
+  background-color: #161618;
   color: var(--google-gray-700);
   word-wrap: break-word;
 }
@@ -164,7 +164,6 @@ h2 {
 
   #main-content {
     margin: 0;
-    transition: opacity 100ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -344,7 +343,6 @@ html[subframe] body {
   position: absolute;
   text-align: center;
   top: 0;
-  transition: background-color .2s ease-in-out;
   width: 100%;
 }
 
@@ -387,8 +385,6 @@ html[subframe] body {
 
 /* Offline page */
 .offline {
-  transition: -webkit-filter 1.5s cubic-bezier(0.65, 0.05, 0.36, 1),
-              background-color 1.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   will-change: -webkit-filter, background-color;
 }
 
@@ -537,6 +533,5 @@ html[subframe] body {
   left: 0;
   margin: auto;
   right: 0;
-  transition: transform 250ms cubic-bezier(0.4, 0.0, 1, 1) .4s;
   z-index: 2;
 }
