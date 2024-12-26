@@ -32,7 +32,7 @@
     flex-grow: 1;
   }
 
-  @media all and ($mobile) {
+  @media all and not ($desktop) {
     display: block;
     max-height: 15rem;
     overflow: auto;
