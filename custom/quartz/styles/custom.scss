@@ -1,11 +1,19 @@
 // put your custom CSS here!
 
+@use "../../../quartz/styles/variables.scss" as *;
+
+
 .page {
    max-width: 100%;
    & > #quartz-body {
        & .sidebar {
          gap: 1rem;
          padding: 1rem;
+         & .sidebar.right {
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+          }
        }
    }
 }
@@ -14,4 +22,18 @@
   & > h3 {
     margin: 0;
   }
+}
+
+
+.toc.desktop-only {
+  max-height: unset;
+  height: 40%;
+  flex-grow: 1;
+}
+
+.toc.mobile-only {
+  display: inline-block;
+  max-height: 15rem;
+  overflow: auto;
+  width: 100%;
 }
