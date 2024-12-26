@@ -25,17 +25,19 @@
 }
 
 
-.toc.desktop-only {
-  max-height: unset;
-  height: 40%;
-  flex-grow: 1;
-}
+.toc {
+  &.desktop-only {
+    max-height: unset;
+    height: 40%;
+    flex-grow: 1;
+  }
 
-.toc.mobile-only {
-  display: inline-block;
-  max-height: 15rem;
-  overflow: auto;
-  width: 100%;
+  @media all and ($mobile) {
+    display: block;
+    max-height: 15rem;
+    overflow: auto;
+    width: 100%;
+  }
 }
 
 .page-title {
