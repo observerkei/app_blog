@@ -16,7 +16,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Custom.Waline()
   ],
-  footer: Custom.Empty(),
+  footer: Custom.WalineFooterViewOnly(),
 }
 
 // components for pages that display a single page (e.g. a single note)
