@@ -51,7 +51,8 @@ export default ((userOpts?: Partial<Options>) => {
             }}>
 
             <h3 style={{
-              marginTop: '1rem',
+              marginTop: '0',
+              marginBottom: '0.2rem',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
@@ -61,7 +62,7 @@ export default ((userOpts?: Partial<Options>) => {
                 fontSize: '1rem',
                 fontWeight: 'bold',
               }}>
-                Recent Notes:
+                Recent Notes
               </div>
 
               {opts.linkToMore && remaining > 0 && (

@@ -50,12 +50,6 @@
   overflow-wrap: break-word;
 }
 
-.explorer {
-  @media all {
-    min-height: 18rem;
-  }
-}
-
 .backlinks {
   & > .overflow {
     @media all and not ($desktop) {
