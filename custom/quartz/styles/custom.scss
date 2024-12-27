@@ -12,14 +12,6 @@
       padding: 1rem;
       
     }
-
-    & .sidebar.left {
-      overflow: auto;
-    }
-
-    & .sidebar.right {
-      overflow: auto;
-    }
   }
 }
 
@@ -36,12 +28,11 @@
     height: unset;
     flex-grow: 1;
   }
+}
 
+#toc-content {
   @media all and not ($desktop) {
-    display: block;
     max-height: 15rem;
-    overflow: auto;
-    width: 100%;
   }
 }
 
