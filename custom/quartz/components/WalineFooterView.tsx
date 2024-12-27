@@ -2,11 +2,14 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "../../../quartz/components/./styles/footer.scss"
 import { version } from "../../../package.json"
 import { i18n } from "../../../quartz/i18n"
-import WalinePageview from "./Waline/waline-pageview"
+import WalinePageView from "./Waline/waline-pageview"
+// @ts-ignore
+import WalinePageViewScript from "./Waline/waline-pageview.inline"
 
 interface Options {
   links: Record<string, string>
 }
+
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
@@ -21,7 +24,7 @@ export default ((opts?: Options) => {
           </p>
           <p id="waline-pageview-wait" style="visibility: hidden;" class="breakable">
             {"Current page views:"}{" "}
-            <WalinePageview />
+            <WalinePageView />
           </p>
           <div style="text-align: center;">
             <a href="#" >⇫</a>
@@ -39,6 +42,6 @@ export default ((opts?: Options) => {
   }
 
   Footer.css = style
-  //Footer.afterDOMLoaded;
+  Footer.afterDOMLoaded = WalinePageViewScript;
   return Footer
 }) satisfies QuartzComponentConstructor

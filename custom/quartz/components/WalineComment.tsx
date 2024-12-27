@@ -1,6 +1,7 @@
-import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../../../quartz/components//types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../../../quartz/components/types"
 import WalineComment from "./Waline/waline-comment"
-import WalineScript from "./Waline/waline.inline"
+// @ts-ignore
+import WalineCommentScript from "./Waline/waline-comment.inline"
 
 interface Options {
   links: Record<string, string>
@@ -19,6 +20,6 @@ export default ((opts?: Options) => {
     )
   }
 
-  Footer.afterDOMLoaded = WalineScript
+  Footer.afterDOMLoaded = WalineCommentScript
   return Footer
 }) satisfies QuartzComponentConstructor

@@ -1,14 +1,14 @@
-import Waline from './/Waline';
+import WalineComment from './WalineComment';
 import Empty from './Empty';
 import RecentTagNotes from './RecentTagNotes';
 import PageTitleDarkmode from './PageTitleDarkmode';
-import WalineFooterViewOnly from './WalineFooterViewOnly';
+import WalineFooterView from './WalineFooterView';
 
 
 export default {
-  Waline,
+  WalineComment,
   Empty,
   RecentTagNotes,
   PageTitleDarkmode,
-  WalineFooterViewOnly,
+  WalineFooterView,
 }

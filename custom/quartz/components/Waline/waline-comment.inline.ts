@@ -35,9 +35,29 @@ function walineContentInit() {
   }
 }
 
-export default () => {
+function WalineComment() {
   // 首次执行
   walineContentInit()
   // SPA操作通知的时候执行
   document.addEventListener("nav", walineContentInit)
 }
+
+
+function wait_load() {
+  var is_404 = false
+  var bodyTag = document.querySelector('body');
+  var dataSlugValue = bodyTag.getAttribute('data-slug');
+  if (dataSlugValue === "404") {
+    is_404 = true
+  }
+
+  if (!is_404) {
+    try {
+      WalineComment();
+    } catch (err) {
+
+    }
+  }
+}
+
+setTimeout(() => wait_load(), 100);
