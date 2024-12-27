@@ -41,6 +41,7 @@ export const sharedPageComponents: SharedLayout = {
       [
         "tags/Note",
         "404",
+        "index",
       ],
       Component.Comments({
         provider: 'giscus',
@@ -49,7 +50,7 @@ export const sharedPageComponents: SharedLayout = {
           repoId: 'R_kgDOLL-VIw',
           category: 'Announcements',
           categoryId: 'DIC_kwDOLL-VI84CljV6',
-          mapping: 'pathname',
+          mapping: 'title',
           strict: true,
           reactionsEnabled: true,
           inputPosition: "top",
