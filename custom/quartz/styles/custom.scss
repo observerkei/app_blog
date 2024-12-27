@@ -4,31 +4,36 @@
 @use "../components/styles/PageTitleDarkmode.scss";
 
 .page {
-   max-width: 100%;
-   & > #quartz-body {
-       & .sidebar {
-         gap: 1rem;
-         padding: 1rem;
-         & .sidebar.right {
-            display: flex;
-            flex-direction: column;
-            overflow: auto;
-          }
-       }
-   }
+  max-width: 100%;
+
+  &>#quartz-body {
+    & .sidebar {
+      gap: 1rem;
+      padding: 1rem;
+      
+    }
+
+    & .sidebar.left {
+      overflow: auto;
+    }
+
+    & .sidebar.right {
+      overflow: auto;
+    }
+  }
 }
 
 .recent-notes {
-  & > h3 {
+  &>h3 {
     margin: 0;
   }
 }
 
-
 .toc {
   &.desktop-only {
     max-height: unset;
-    height: 40%;
+    min-height: 18rem;
+    height: unset;
     flex-grow: 1;
   }
 
@@ -45,7 +50,8 @@
   overflow-wrap: break-word;
 }
 
-.dino-item {
-  
+.explorer {
+  @media all {
+    min-height: 18rem;
+  }
 }
-
