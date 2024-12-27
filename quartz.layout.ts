@@ -14,7 +14,8 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    Custom.Waline()
+    Custom.Waline(),
+    Component.Backlinks(),
   ],
   footer: Custom.WalineFooterViewOnly(),
 }
@@ -49,7 +50,6 @@ export const defaultContentPageLayout: PageLayout = {
       "tags/Note", limit: 1,
       filter: filterFileTags("Note"),
     })),
-    Component.Backlinks(),
     Component.Graph({
       localGraph: {
         removeTags: [

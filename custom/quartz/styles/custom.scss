@@ -55,3 +55,11 @@
     min-height: 18rem;
   }
 }
+
+.backlinks {
+  & > .overflow {
+    @media all and not ($desktop) {
+      height: auto;
+    }
+  }
+}
