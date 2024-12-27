@@ -16,11 +16,8 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
     afterBody: [
     Component.Backlinks(),
-    Component.MobileOnly(Component.RecentNotes({ 
-      linkToMore: 
-      "tags/Note", limit: 1,
-      filter: filterFileTags("Note"),
-    })),
+  ],
+  footer: Custom.FooterPack([
     Component.Comments({
       provider: 'giscus',
       options: {
@@ -36,8 +33,8 @@ export const sharedPageComponents: SharedLayout = {
         darkTheme: "noborder_dark",
       }
     }),
-  ],
-  footer: Custom.WalineFooterView(),
+    Custom.WalinePageView(),
+  ]),
 }
 
 // components for pages that display a single page (e.g. a single note)
@@ -65,6 +62,11 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
+    Component.MobileOnly(Component.RecentNotes({ 
+      linkToMore: 
+      "tags/Note", limit: 1,
+      filter: filterFileTags("Note"),
+    })),
     Component.Graph({
       localGraph: {
         removeTags: [
