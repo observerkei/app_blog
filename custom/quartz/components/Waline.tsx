@@ -1,6 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../../../quartz/components//types"
-import WalineComment from "../../../quartz/components/./../../content/.obsidian/plugins/waline/waline-comment"
-import WalineScript from "./scripts/waline.inline"
+import WalineComment from "./Waline/waline-comment"
+import WalineScript from "./Waline/waline.inline"
 
 interface Options {
   links: Record<string, string>

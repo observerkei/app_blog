@@ -1,5 +1,5 @@
-import Comment from '../../../../content/.obsidian/plugins/waline/waline-comment.inline'
-import Pageview from '../../../../content/.obsidian/plugins/waline/waline-pageview.inline'
+import Comment from './waline-comment.inline'
+import Pageview from './waline-pageview.inline'
 
 
 function wait_load() {

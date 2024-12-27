@@ -2,7 +2,7 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "../../../quartz/components/./styles/footer.scss"
 import { version } from "../../../package.json"
 import { i18n } from "../../../quartz/i18n"
-import WalinePageview from "../../../content/.obsidian/plugins/waline/waline-pageview"
+import WalinePageview from "./Waline/waline-pageview"
 
 interface Options {
   links: Record<string, string>
