@@ -14,8 +14,9 @@ function walineContentInit() {
   if (window.waline_content_global) {
     return;
   }
-  // 不在主页渲染
-  if (window.location.pathname !== '/') {
+  // 不在主页、索引页渲染
+  if (window.location.pathname !== '/' 
+      && window.location.pathname !== '/tags/Note' ) {
     window.waline_content_global = init({
       el: '#waline',
       dark: 'html[saved-theme=\'dark\']',
