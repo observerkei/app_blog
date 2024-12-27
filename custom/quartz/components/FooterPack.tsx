@@ -3,16 +3,15 @@ import style from "../../../quartz/components/./styles/footer.scss"
 
 
 type QuartzComponentPackConstructor<Options extends object | undefined = undefined> = (
-    list: QuartzComponent[],
+  list: QuartzComponent[],
 ) => QuartzComponent
 
 export default ((list: QuartzComponent[]): QuartzComponent => {
-    const Footer: QuartzComponent = (props: QuartzComponentProps) => {
-
+  const Footer: QuartzComponent = (props: QuartzComponentProps) => {
     return (
       <>
         <footer class={`${props.displayClass ?? "footer-pack"}`}>
-          {list.map((Component: QuartzComponent) => <Component {...props}/>)}
+          {list.map((Component: QuartzComponent) => <Component {...props} />)}
         </footer>
       </>
     )

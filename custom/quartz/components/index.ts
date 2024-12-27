@@ -4,6 +4,7 @@ import RecentTagNotes from './RecentTagNotes';
 import PageTitleDarkmode from './PageTitleDarkmode';
 import FooterPack from './FooterPack';
 import WalinePageView from './WalinePageView';
+import HideSlugComponent from './HideComponent';
 
 
 export default {
@@ -13,4 +14,5 @@ export default {
   PageTitleDarkmode,
   FooterPack,
   WalinePageView,
+  HideSlugComponent,
 }

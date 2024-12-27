@@ -5,8 +5,8 @@ import { getAllSegmentPrefixes } from "./quartz/util/path"
 import { QuartzPluginData } from "./quartz/plugins/vfile";
 
 const filterFileTags = (Tag: string) => {
-  return (file: QuartzPluginData) => 
-   (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(Tag)
+  return (file: QuartzPluginData) =>
+    (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(Tag)
 };
 
 
@@ -14,25 +14,51 @@ const filterFileTags = (Tag: string) => {
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-    afterBody: [
-    Component.Backlinks(),
+  afterBody: [
+    Custom.HideSlugComponent(
+      [
+        "tags/Note",
+        "404",
+        "index",
+      ],
+      Component.Backlinks()
+    ),
+    Custom.HideSlugComponent(
+      [
+        "tags/Note",
+        "404",
+        "index",
+      ],
+      Component.MobileOnly(Component.RecentNotes({
+        linkToMore: "tags/Note",
+        limit: 1,
+        filter: filterFileTags("Note"),
+      }))
+    ),
   ],
   footer: Custom.FooterPack([
-    Component.Comments({
-      provider: 'giscus',
-      options: {
-        repo: 'observerkei/blog-observerkei',
-        repoId: 'R_kgDOLL-VIw',
-        category: 'Announcements',
-        categoryId: 'DIC_kwDOLL-VI84CljV6',
-        mapping: 'pathname',
-        strict: true,
-        reactionsEnabled: true,
-        inputPosition: "top",
-        lightTheme: "noborder_light",
-        darkTheme: "noborder_dark",
-      }
-    }),
+    Custom.HideSlugComponent(
+      [
+        "tags/Note",
+        "404",
+      ],
+      Component.Comments({
+        provider: 'giscus',
+        options: {
+          repo: 'observerkei/blog-observerkei',
+          repoId: 'R_kgDOLL-VIw',
+          category: 'Announcements',
+          categoryId: 'DIC_kwDOLL-VI84CljV6',
+          mapping: 'pathname',
+          strict: true,
+          reactionsEnabled: true,
+          inputPosition: "top",
+          themeUrl: "https://blog.observerkei.top/static/giscus",
+          lightTheme: "noborder_light",
+          darkTheme: "noborder_dark",
+        }
+      })
+    ),
     Custom.WalinePageView(),
   ]),
 }
@@ -53,8 +79,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.MobileOnly(Component.Darkmode()),
-    Component.DesktopOnly(Custom.RecentTagNotes({ 
-      linkToMore: "tags/Note", 
+    Component.DesktopOnly(Custom.RecentTagNotes({
+      linkToMore: "tags/Note",
       limit: 1,
       filter: filterFileTags("Note"),
     })),
@@ -62,11 +88,6 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.RecentNotes({ 
-      linkToMore: 
-      "tags/Note", limit: 1,
-      filter: filterFileTags("Note"),
-    })),
     Component.Graph({
       localGraph: {
         removeTags: [
@@ -87,9 +108,9 @@ export const defaultContentPageLayout: PageLayout = {
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(), 
+    Component.Breadcrumbs(),
     Component.MobileOnly(Component.Explorer({ showTitlePointer: false, title: " " })),
-    Component.ArticleTitle(), 
+    Component.ArticleTitle(),
     Component.ContentMeta()
   ],
   left: [
