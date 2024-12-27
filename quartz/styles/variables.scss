@@ -10,7 +10,9 @@ $breakpoints: (
   desktop: 1200px,
 );
 
-$mobile: "(max-width: #{map-get($breakpoints, mobile)})";
+$mobleHeight: 400;
+
+$mobile: "(max-width: #{map-get($breakpoints, mobile)}) or (max-height: #{$mobleHeight})";
 $tablet: "(min-width: #{map-get($breakpoints, mobile)}) and (max-width: #{map-get($breakpoints, desktop)})";
 $desktop: "(min-width: #{map-get($breakpoints, desktop)})";
 

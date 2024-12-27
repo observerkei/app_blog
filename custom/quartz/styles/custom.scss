@@ -10,14 +10,23 @@
     & .sidebar {
       gap: 1rem;
       padding: 1rem;
-      
     }
   }
+}
+.recent-tag-notes {
+  flex-shrink: 1;
 }
 
 .recent-notes {
   &>h3 {
     margin: 0;
+  }
+  & > ul.recent-ul {
+    & > li {
+      .section > .desc > h3 > a {
+        font-size: 1rem;
+      }
+    }
   }
 }
 

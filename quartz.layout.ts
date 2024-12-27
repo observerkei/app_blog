@@ -16,6 +16,11 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Custom.Waline(),
     Component.Backlinks(),
+    Component.MobileOnly(Component.RecentNotes({ 
+      linkToMore: 
+      "tags/Note", limit: 1,
+      filter: filterFileTags("Note"),
+    })),
   ],
   footer: Custom.WalineFooterViewOnly(),
 }
@@ -45,11 +50,6 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.MobileOnly(Component.RecentNotes({ 
-      linkToMore: 
-      "tags/Note", limit: 1,
-      filter: filterFileTags("Note"),
-    })),
     Component.Graph({
       localGraph: {
         removeTags: [
