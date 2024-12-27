@@ -14,7 +14,7 @@ export default ((opts?: Options) => {
     )
   }
 
-  Footer.css;
-  Footer.afterDOMLoaded;
+  //Footer.css;
+  //Footer.afterDOMLoaded;
   return Footer
 }) satisfies QuartzComponentConstructor

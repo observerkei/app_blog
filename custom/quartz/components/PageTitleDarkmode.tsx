@@ -25,7 +25,7 @@ const PageTitleDarkmode: QuartzComponent = ({ fileData, displayClass, cfg }: Qua
       }}>
 
         <h2
-          class={classNames(displayClass, "page-title")}
+          class={classNames(displayClass, "page-title-darkmode")}
           style={{
             fontSize: '1.75rem',
             margin: 0,
