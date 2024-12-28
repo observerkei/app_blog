@@ -27,7 +27,6 @@ export const sharedPageComponents: SharedLayout = {
       [
         "tags/Note",
         "404",
-        "index",
       ],
       Component.MobileOnly(Component.RecentNotes({
         linkToMore: "tags/Note",
