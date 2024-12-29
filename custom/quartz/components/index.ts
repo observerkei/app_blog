@@ -4,7 +4,8 @@ import RecentTagNotes from './RecentTagNotes';
 import PageTitleDarkmode from './PageTitleDarkmode';
 import FooterPack from './FooterPack';
 import WalinePageView from './WalinePageView';
-import HideSlugComponent from './HideComponent';
+import HideSlugComponent from './HideSlugComponent';
+import CreateGiscusBacklink from './CreateGiscusBacklink';
 
 
 export default {
@@ -15,4 +16,5 @@ export default {
   FooterPack,
   WalinePageView,
   HideSlugComponent,
+  CreateGiscusBacklink,
 }

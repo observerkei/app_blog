@@ -35,6 +35,7 @@ export const sharedPageComponents: SharedLayout = {
     ),
   ],
   footer: Custom.FooterPack([
+    Custom.CreateGiscusBacklink(),
     Custom.HideSlugComponent(
       [
         "tags/Note",
