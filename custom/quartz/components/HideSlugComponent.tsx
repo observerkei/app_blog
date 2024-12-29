@@ -1,4 +1,4 @@
-import { QuartzComponent, QuartzComponentProps } from "./types"
+import { QuartzComponent, QuartzComponentProps } from "../../../quartz/components/./types"
 
 
 type QuartzComponentHideConstructor<Options extends object | undefined = undefined> = (
