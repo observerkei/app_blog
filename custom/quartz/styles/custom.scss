@@ -3,10 +3,6 @@
 @use "../../../quartz/styles/variables.scss" as *;
 @use "../components/styles/PageTitleDarkmode.scss";
 
-html {
-  overflow-x: unset;
-  scrollbar-width: none;
-}
 
 .page {
   max-width: 100%;
