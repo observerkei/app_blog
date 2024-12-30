@@ -17,15 +17,15 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Custom.HideSlugComponent(
       [
-        "tags/Note",
-        "404",
+        "^tags\/Note$",
+        "^404$",
       ],
       Component.Backlinks()
     ),
     Custom.HideSlugComponent(
       [
-        "tags/Note",
-        "404",
+        "^tags\/Note$",
+        "^404$",
       ],
       Component.MobileOnly(Component.RecentNotes({
         linkToMore: "tags/Note",
@@ -38,9 +38,9 @@ export const sharedPageComponents: SharedLayout = {
     Custom.CreateGiscusBacklink(),
     Custom.HideSlugComponent(
       [
-        "tags/Note",
-        "404",
-        "index",
+        "^tags\/Note$",
+        "^404$",
+        "^.*\/index$",
       ],
       Component.Comments({
         provider: 'giscus',

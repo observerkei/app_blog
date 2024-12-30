@@ -14,7 +14,9 @@ export default ((hideSlug: string[], component?: QuartzComponent) => {
 
             if (hideSlug.length > 0) {
                 for (const item of hideSlug) {
-                    if (item === props.fileData.slug) {
+                    const regex = new RegExp(item);
+                    const slug = props.fileData.slug;
+                    if (typeof slug === "string" && regex.test(slug)) {
                         hideComponent = true;
                         break;
                     }
