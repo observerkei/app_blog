@@ -90,6 +90,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Graph({
       localGraph: {
+        depth: 2,
         removeTags: [
           "Note",
           "excalidraw"
@@ -123,6 +124,7 @@ export const defaultListPageLayout: PageLayout = {
   right: [
     Component.Graph({
       localGraph: {
+        depth: 2,
         removeTags: [
           "excalidraw"
         ]
