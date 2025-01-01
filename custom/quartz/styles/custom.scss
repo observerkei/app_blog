@@ -53,8 +53,6 @@
 
 .backlinks {
   & > .overflow {
-    @media all and not ($desktop) {
-      height: auto;
-    }
+    height: auto;
   }
 }
