@@ -9,6 +9,11 @@ const filterFileTags = (Tag: string) => {
     (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(Tag)
 };
 
+const recentNotes = (limit: number = 1) => Component.RecentNotes({
+  linkToMore: "tags/Note",
+  limit: limit,
+  filter: filterFileTags("Note"),
+});
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -24,15 +29,19 @@ export const sharedPageComponents: SharedLayout = {
     }),
     Custom.FilterSlugComponent({
       blackList: [
+        "^index$",
         "^tags\/Note$",
         "^404$",
       ],
-      component: Component.MobileOnly(Component.RecentNotes({
-        linkToMore: "tags/Note",
-        limit: 1,
-        filter: filterFileTags("Note"),
-      }))
+      component: recentNotes(2)
     }),
+    Component.MobileOnly(
+      Custom.FilterSlugComponent({
+        whiteList: [
+          "^index$",
+        ],
+        component: recentNotes(2)
+    })),
   ],
   footer: Custom.FooterPack([
     Custom.CreateGiscusBacklink(),
@@ -98,10 +107,12 @@ export const defaultContentPageLayout: PageLayout = {
         ]
       }
     }),
-    Component.DesktopOnly(Component.RecentNotes({
-      linkToMore: "tags/Note",
-      limit: 3,
-      filter: filterFileTags("Note"),
+    Component.DesktopOnly(
+      Custom.FilterSlugComponent({
+        whiteList: [
+          "^index$",
+        ],
+        component: recentNotes(2)
     })),
   ],
 }
