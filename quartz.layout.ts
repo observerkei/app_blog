@@ -15,34 +15,34 @@ export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    Custom.HideSlugComponent(
-      [
+    Custom.FilterSlugComponent({
+      blackList: [
         "^tags\/Note$",
         "^404$",
       ],
-      Component.Backlinks()
-    ),
-    Custom.HideSlugComponent(
-      [
+      component: Component.Backlinks()
+    }),
+    Custom.FilterSlugComponent({
+      blackList: [
         "^tags\/Note$",
         "^404$",
       ],
-      Component.MobileOnly(Component.RecentNotes({
+      component: Component.MobileOnly(Component.RecentNotes({
         linkToMore: "tags/Note",
         limit: 1,
         filter: filterFileTags("Note"),
       }))
-    ),
+    }),
   ],
   footer: Custom.FooterPack([
     Custom.CreateGiscusBacklink(),
-    Custom.HideSlugComponent(
-      [
+    Custom.FilterSlugComponent({
+      blackList: [
         "^tags\/Note$",
         "^404$",
         "^.*\/index$",
       ],
-      Component.Comments({
+      component: Component.Comments({
         provider: 'giscus',
         options: {
           repo: 'observerkei/blog-observerkei',
@@ -58,7 +58,7 @@ export const sharedPageComponents: SharedLayout = {
           darkTheme: "noborder_dark",
         }
       })
-    ),
+    }),
     Custom.WalinePageView(),
   ]),
 }
@@ -79,11 +79,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.MobileOnly(Component.Darkmode()),
-    Component.DesktopOnly(Custom.RecentTagNotes({
-      linkToMore: "tags/Note",
-      limit: 1,
-      filter: filterFileTags("Note"),
-    })),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
@@ -103,6 +98,11 @@ export const defaultContentPageLayout: PageLayout = {
         ]
       }
     }),
+    Component.DesktopOnly(Component.RecentNotes({
+      linkToMore: "tags/Note",
+      limit: 3,
+      filter: filterFileTags("Note"),
+    })),
   ],
 }
 
