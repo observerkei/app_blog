@@ -16,3 +16,11 @@ Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility 
     <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
   </a>
 </p>
+
+
+## Customization
+
+- Full screen support
+- Indexing comments by meta is supported
+- Support Waline comments and view count
+- Add conditional rendering composition component to optimize multi-device layout.
