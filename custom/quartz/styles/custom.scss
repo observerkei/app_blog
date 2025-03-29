@@ -56,3 +56,13 @@
     height: auto;
   }
 }
+
+
+@media all and ($mobile) {
+  .page > #quartz-body {
+    // Sticky top bar (stays in place when scrolling down on mobile).
+    .sidebar.left:has(.explorer) {
+      position: unset;
+    }
+  }
+}

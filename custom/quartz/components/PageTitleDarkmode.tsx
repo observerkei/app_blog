@@ -2,7 +2,7 @@
 // modules are automatically deferred and we don't want that to happen for critical beforeDOMLoads
 // see: https://v8.dev/features/modules#defer
 import darkmodeScript from "./scripts/pagetitle-darkmode.inline"
-import styles from "../../../quartz/components/./styles/darkmode.scss"
+import darkmodeStyles from "../../../quartz/components/./styles/darkmode.scss"
 import {
   QuartzComponent,
   QuartzComponentConstructor,
@@ -72,6 +72,6 @@ const PageTitleDarkmode: QuartzComponent = ({ fileData, displayClass, cfg }: Qua
 }
 
 PageTitleDarkmode.beforeDOMLoaded = darkmodeScript
-PageTitleDarkmode.css = styles
+PageTitleDarkmode.css = darkmodeStyles
 
 export default (() => PageTitleDarkmode) satisfies QuartzComponentConstructor
