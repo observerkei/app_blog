@@ -66,3 +66,25 @@
     }
   }
 }
+
+
+.search {
+  & > .search-button {
+    @media all and ($mobile) {
+      background-color: var(--light);
+      width: auto;
+    }
+  }
+}
+
+#search-title {
+  @media all and ($mobile) {
+    display: none;
+  }
+}
+
+#search-title-p {
+  @media all and ($mobile) {
+    display: none;
+  }
+}
