@@ -4,6 +4,14 @@
 @use "../components/styles/PageTitleDarkmode.scss";
 
 
+
+.desktop-not {
+  display: none;
+  @media all and not ($desktop) {
+    display: initial;
+  }
+}
+
 .page {
   max-width: 100%;
 
@@ -38,13 +46,15 @@
     height: unset;
     flex-grow: 1;
   }
-}
 
-.toc-content {
-  @media all and not ($desktop) {
-    max-height: 15rem !important;
+  .toc-content {
+    @media all and not ($desktop) {
+      max-height: 15rem !important;
+    }
   }
 }
+
+
 
 .page-title {
   white-space: normal;

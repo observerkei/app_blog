@@ -6,6 +6,7 @@ import FooterPack from './FooterPack';
 import WalinePageView from './WalinePageView';
 import FilterSlugComponent from './FilterSlugComponent';
 import CreateGiscusBacklink from './CreateGiscusBacklink';
+import DesktopNot from './DesktopNot';
 
 
 export default {
@@ -17,4 +18,5 @@ export default {
   WalinePageView,
   FilterSlugComponent,
   CreateGiscusBacklink,
+  DesktopNot,
 }

@@ -79,7 +79,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
-    Component.MobileOnly(Component.TableOfContents()),
+    Custom.DesktopNot(Component.TableOfContents()),
   ],
   left: [
     Component.MobileOnly(Component.PageTitle()),
