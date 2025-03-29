@@ -46,6 +46,14 @@
     height: unset;
     flex-grow: 1;
   }
+  
+  &:has(button.toc-header.collapsed) {
+    .toc-content {
+      @media all and not ($desktop) {
+        max-height: 0 !important;
+      }
+    }
+  }
 
   .toc-content {
     @media all and not ($desktop) {
@@ -53,7 +61,6 @@
     }
   }
 }
-
 
 
 .page-title {
