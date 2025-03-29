@@ -40,9 +40,9 @@
   }
 }
 
-#toc-content {
+.toc-content {
   @media all and not ($desktop) {
-    max-height: 15rem;
+    max-height: 15rem !important;
   }
 }
 
