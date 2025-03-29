@@ -126,10 +126,11 @@ export const defaultListPageLayout: PageLayout = {
     Component.ContentMeta()
   ],
   left: [
-    Component.PageTitle(),
+    Component.MobileOnly(Component.PageTitle()),
+    Component.DesktopOnly(Custom.PageTitleDarkmode()),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.Darkmode(),
+    Component.MobileOnly(Component.Darkmode()),
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
