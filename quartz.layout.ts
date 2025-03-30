@@ -132,19 +132,5 @@ export const defaultListPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    Component.Graph({
-      localGraph: {
-        depth: 2,
-        removeTags: [
-          "excalidraw"
-        ]
-      },
-      globalGraph: {
-        removeTags: [
-          "Note",
-          "excalidraw"
-        ]
-      }
-    })
   ],
 }
